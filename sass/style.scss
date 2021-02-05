@@ -51,16 +51,49 @@ main {
 	align-self: flex-end;
 	position: sticky;
 	bottom: 0;
-	ul {
-		padding: 0;
-		list-style: none;
-		li {
-			padding: 0.5em 0.2em;
-			font-size: 13px;
-			color: #2f070778;
-			&.active {
-				color: #2f0707d4;
-				font-weight: bold;
+	@include mq(768) {
+		flex-basis: 0%;
+	}
+
+	.menu_container {
+		position: relative;
+		#mobile-trigger {
+			display: none;
+			cursor: pointer;
+			@include mq(768) {
+				display: block;
+				text-align: end;
+			}
+
+			i.bx {
+				font-size: 1.8em;
+				vertical-align: middle;
+			}
+		}
+		input[data-target="mobile"] {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			opacity: 0;
+			&:checked ~ ul {
+				display: block;
+			}
+		}
+		ul {
+			@include mq(768) {
+				display: none;
+				text-align: end;
+			}
+			padding: 0;
+			list-style: none;
+			li {
+				padding: 0.5em 0.2em;
+				font-size: 13px;
+				color: #2f070778;
+				&.active {
+					color: #2f0707d4;
+					font-weight: bold;
+				}
 			}
 		}
 	}
@@ -131,6 +164,7 @@ main {
 						}
 						&.category {
 							color: $primary-color;
+							display: none;
 						}
 						&.vote {
 							color: #4caf50;

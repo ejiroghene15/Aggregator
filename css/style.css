@@ -44,16 +44,53 @@ main {
   position: sticky;
   bottom: 0;
 }
-.aggr__nav ul {
+@media screen and (max-width: 768px) {
+  .aggr__nav {
+    flex-basis: 0%;
+  }
+}
+.aggr__nav .menu_container {
+  position: relative;
+}
+.aggr__nav .menu_container #mobile-trigger {
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .aggr__nav .menu_container #mobile-trigger {
+    display: block;
+    text-align: end;
+  }
+}
+.aggr__nav .menu_container #mobile-trigger i.bx {
+  font-size: 1.8em;
+  vertical-align: middle;
+}
+.aggr__nav .menu_container input[data-target=mobile] {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+}
+.aggr__nav .menu_container input[data-target=mobile]:checked ~ ul {
+  display: block;
+}
+.aggr__nav .menu_container ul {
   padding: 0;
   list-style: none;
 }
-.aggr__nav ul li {
+@media screen and (max-width: 768px) {
+  .aggr__nav .menu_container ul {
+    display: none;
+    text-align: end;
+  }
+}
+.aggr__nav .menu_container ul li {
   padding: 0.5em 0.2em;
   font-size: 13px;
   color: #2f070778;
 }
-.aggr__nav ul li.active {
+.aggr__nav .menu_container ul li.active {
   color: #2f0707d4;
   font-weight: bold;
 }
@@ -127,6 +164,7 @@ main {
 }
 .aggr__main_content .__articles > article p.labels a.category {
   color: brown;
+  display: none;
 }
 .aggr__main_content .__articles > article p.labels a.vote {
   color: #4caf50;
