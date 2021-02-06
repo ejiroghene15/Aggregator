@@ -1,0 +1,35 @@
+@import "./variables";
+
+.form {
+	width: 80%;
+	@include mq(768) {
+		margin: auto;
+	}
+	@include mq(600) {
+		width: 100%;
+	}
+	&__group {
+		margin-bottom: 2vh;
+		label {
+			display: block;
+			color: $secondary-color;
+			padding: 0.7em 0;
+		}
+		.input {
+			padding: 1em;
+			border-radius: 4px;
+			width: 100%;
+			border: 1px solid $shadow;
+			outline: $shadow;
+		}
+	}
+	.submit {
+		border: none !important;
+		outline: none !important;
+		padding: 1em 2em;
+		background-color: $primary-color;
+		color: #fff;
+		margin: 2vh 0;
+		cursor: pointer;
+	}
+}

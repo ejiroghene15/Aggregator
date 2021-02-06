@@ -1,15 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nunito:wght@200;400&display=swap");
-
-$primary-color: brown;
-$secondary-color: #0f1f2f;
-$tfont: "Nunito", sans-serif;
-$hfont: "Libre Baskerville", serif;
-
-@mixin mq($arg) {
-	@media screen and (max-width: #{$arg}px) {
-		@content;
-	}
-}
+@import "./variables";
 html {
 	height: 100%;
 }
@@ -48,13 +37,13 @@ main {
 
 .aggr__nav {
 	flex-basis: 20vw;
+	@include mq(768) {
+		flex-basis: 0;
+	}
+
 	align-self: flex-end;
 	position: sticky;
 	bottom: 0;
-	@include mq(768) {
-		flex-basis: 0%;
-		width: 100%;
-	}
 
 	.menu_container {
 		position: relative;
@@ -77,27 +66,39 @@ main {
 			width: 100%;
 			height: 90%;
 			cursor: pointer;
-			opacity: 0;
-			&:checked ~ ul {
-				display: block;
+			opacity: 0 !important;
+			&:checked {
+				~ ul {
+					display: block;
+				}
 			}
 		}
+
 		ul {
+			position: relative;
+			z-index: 1;
 			@include mq(768) {
 				display: none;
 				text-align: end;
 				border-right: 2px solid #79554824;
-				padding-right: .7em;
+				padding-right: 0.7em;
 			}
 			padding: 0;
 			list-style: none;
 			li {
 				padding: 0.5em 0.2em;
 				font-size: 13px;
-				color: #2f070778;
+
+				a {
+					color: #2f070778;
+					text-decoration: none;
+				}
+
 				&.active {
-					color: #2f0707d4;
-					font-weight: bold;
+					a {
+						color: #2f0707d4;
+						font-weight: bold;
+					}
 				}
 			}
 		}
