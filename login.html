@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Aggregator</title>
+		<title>Aggregator | Login</title>
 		<link
 			href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
 			rel="stylesheet"
@@ -28,23 +28,54 @@
 					</nav>
 					<section class="aggr__main_content">
 						<form method="post" class="form">
-							<h3 class="__heading">Login</h3>
+							<div id="login">
+								<h3 class="__heading">Login</h3>
 
-							<section class="form__group">
-								<label for="email">Email Address</label>
-								<input type="text" name="email" class="input" />
-							</section>
-							<section class="form__group">
-								<label for="password">Password</label>
-								<input type="text" name="password" class="input" />
-							</section>
+								<section class="form__group">
+									<label for="email">Email Address</label>
+									<input type="text" name="email" class="input" />
+								</section>
 
-							<button class="submit">Login</button>
+								<section class="form__group">
+									<label for="password">Password</label>
+									<input type="text" name="password" class="input" />
+								</section>
+
+								<button class="submit">Login</button>
+								<p class="misc_form_text">
+									<a id="_fp"> Forgot Password?</a>
+								</p>
+							</div>
+
+							<div id="forgot-password">
+								<h3 class="__heading">Reset Password</h3>
+								<section class="form__group">
+									<label for="email">Email Address</label>
+									<input type="text" name="email" class="input" />
+								</section>
+
+								<button class="submit">Send Reset Link</button>
+								<p class="misc_form_text">
+									<a id="_login"> Back to Login</a>
+								</p>
+							</div>
 						</form>
 					</section>
 				</div>
 			</main>
 			<footer></footer>
 		</div>
+		<script>
+			document.querySelector("#_fp").addEventListener("click", function (e) {
+				e.preventDefault();
+				document.querySelector("#login").style.display = "none";
+				document.querySelector("#forgot-password").style.display = "block";
+			});
+			document.querySelector("#_login").addEventListener("click", function (e) {
+				e.preventDefault();
+				document.querySelector("#login").style.display = "block";
+				document.querySelector("#forgot-password").style.display = "none";
+			});
+		</script>
 	</body>
 </html>

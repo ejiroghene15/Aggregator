@@ -6,6 +6,9 @@
 .form {
   width: 80%;
 }
+.form #forgot-password {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .form {
     margin: auto;
@@ -39,4 +42,10 @@
   color: #fff;
   margin: 2vh 0;
   cursor: pointer;
+}
+.form .misc_form_text a {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0f1f2f;
 }
