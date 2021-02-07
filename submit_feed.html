@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Aggregator | Register</title>
+		<title>Aggregator | New Feed</title>
 		<link
 			href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
 			rel="stylesheet"
@@ -20,34 +20,34 @@
 							<p id="mobile-trigger"><i class="bx bx-menu"></i> Menu</p>
 							<input type="checkbox" data-target="mobile" />
 							<ul>
+								<li><a href="#">Profile</a></li>
 								<li><a href="/">Feeds</a></li>
-								<li><a href="./login.html">Login</a></li>
-								<li class="active"><a href="">Register</a></li>
+								<li class="active"><a href="">New Feed</a></li>
 							</ul>
 						</div>
 					</nav>
-					<section class="aggr__main_content">
-						<form method="post" class="form">
-							<h3 class="__heading">Register</h3>
 
+					<section class="aggr__main_content">
+						<h3 class="__heading">New Feed</h3>
+
+						<p class="__about">Additional info goes here</p>
+						<form method="post" class="form">
 							<section class="form__group">
-								<label for="email">Email Address</label>
-								<input type="text" name="email" class="input" />
+								<label for="url">Url</label>
+								<input type="text" name="url" class="input" />
 							</section>
 							<section class="form__group">
-								<label for="password">Password</label>
-								<input type="password" name="password" class="input" />
+								<label for="twitter">Twitter Handle(Optional)</label>
+								<input type="text" name="twitter_handle" class="input" />
 							</section>
 							<section class="form__group">
-								<label for="password">Confirm Password</label>
-								<input type="password" name="password" class="input" />
+								<label for="twitter">Blog Information</label>
+								<input type="text" name="blog_info" class="input" />
 							</section>
-							<button class="submit">Register</button>
-							<p class="misc_form_text">
-								<a href="./login.html">
-									Already have an account? Login</a
-								>
-							</p>
+							<button class="submit">Create Feed</button>
+							<!-- <p class="misc_form_text">
+								<a href="./login.html"> Already have an account? Login</a>
+							</p> -->
 						</form>
 					</section>
 				</div>
